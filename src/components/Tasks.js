@@ -5,7 +5,7 @@ const Tasks = (props) => {
     
     return(
         <div>
-            {props.tasks.map((task) => (<Task key={task.id} task={task} />))}
+            {props.tasks.map((task) => (<Task key={task.id} task={task} onToggleReminder={props.onToggleReminder} onDelete={props.onDelete} />))}
         </div>
     )
 }
