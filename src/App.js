@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import { useState } from 'react'
+import AddTask from './components/AddTask'
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -23,6 +24,14 @@ function App() {
       reminder: false
     }
   ])
+
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 100000 ) + 1
+    console.log(id);
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
+  }
+
   // 1:03
   const deleteTask = (id) => {
     console.log(id);
@@ -37,6 +46,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <AddTask onAdd={addTask} />
       {(tasks.length > 0) ? <Tasks tasks={tasks} onToggleReminder={toggleReminder} onDelete={deleteTask} /> : 'No tasks to display'}
       
     </div>
