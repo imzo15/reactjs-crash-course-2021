@@ -12,7 +12,7 @@ const Task = (props) => {
 }
 
 const closeButtonStyle = {
-    color: 'red',
+    color: 'crimson',
     cursor: 'pointer'
 }
 
