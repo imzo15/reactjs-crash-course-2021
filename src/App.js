@@ -33,7 +33,6 @@ function App() {
     setTasks([...tasks, newTask])
   }
 
-  // 1:03
   const deleteTask = (id) => {
     console.log(id);
     setTasks(tasks.filter((task) => task.id !== id))
